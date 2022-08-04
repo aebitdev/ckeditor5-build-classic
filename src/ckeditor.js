@@ -34,6 +34,7 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment";
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Font from '@ckeditor/ckeditor5-font/src/font';
 
 
 export default class ClassicEditor extends ClassicEditorBase {}
@@ -68,6 +69,7 @@ ClassicEditor.builtinPlugins = [
 	TextTransformation,
 	Alignment,
 	Underline,
+	Font,
 ];
 
 // Editor configuration.
@@ -75,6 +77,7 @@ ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'heading',
+			'fontSize',
 			'|',
 			'bold',
 			'italic',
@@ -98,13 +101,14 @@ ClassicEditor.defaultConfig = {
 	},
 	image: {
 		toolbar: [
-			'imageStyle:inline',
-			'imageStyle:block',
-			'imageStyle:side',
+			'imageStyle:alignLeft',
+			'imageStyle:full',
+			'imageStyle:alignRight',
 			'|',
 			'toggleImageCaption',
 			'imageTextAlternative'
-		]
+		],
+		styles: ['full', 'alignLeft', 'alignRight'],
 	},
 	table: {
 		contentToolbar: [
